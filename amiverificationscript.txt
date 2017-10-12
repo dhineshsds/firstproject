@@ -1,0 +1,26 @@
+#!/bin/bash
+dataset_date=`date`
+EX_DAY=`date -d "$dataset_date + 4 days" +%d-%m-%G`
+Img_count=`aws ec2 describe-tags --output text | grep "$EX_DAY" | cut -f3 | wc -l`
+Img_lst=`aws ec2 describe-tags --output text | grep $EX_DAY | cut -f3`
+
+cat <<EOT >> mail.txt
+
+=========================
+Region - Mumbai
+=========================
+
+Total number of AMI's to be taken : 14
+
+The number of AMI's taken : $Img_count
+-------------------------------------------------
+
+The list of AMI's are
+
+$Img_lst
+EOT
+
+cat mail.txt | mailx -s "CM_Today's AMI List" creditmantri.alerts@powerupcloud.com
+echo "Mail sent successfully"
+rm mail.txt
+echo "File removed successfully"

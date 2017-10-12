@@ -1,0 +1,18 @@
+															To ADD SWAP PARTITION 
+# sudo swapon -s
+# free -m
+# df -h           -->here we neet to check with disk size is available.
+# sudo fallocate -l 2GB /swapfile
+# ls -lh /swapfile
+# sudo chmod 600 /swapfile
+# ls -lh /swapfile
+# sudo mkswap /swapfile
+# sudo swapon /swapfile
+# sudo swapon -s
+# free -m
+# sudo nano /etc/fstab
+
+                                                      finish
+
+															
+															

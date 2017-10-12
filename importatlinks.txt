@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+
+
+https://blog.paranoidpenguin.net/2017/04/jorgee-goes-on-a-rampage/
+
+http://www.skepticism.us/2015/05/new-malware-user-agent-value-jorgee/
+
+http://forum.directadmin.com/showthread.php?t=55028
+
+http://srdjan.rajcevic.net/
+
